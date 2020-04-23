@@ -21,4 +21,6 @@
           (mapcar (lambda (str) (split "=" str))
                   (split "&" query))))
 
+(defun get-method ())
+
 (defun method-override ())
