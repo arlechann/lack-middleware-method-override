@@ -13,4 +13,6 @@
             (reverse (cons str acc))
             (split sep (subseq str (+ pos len)) (cons (subseq str 0 pos) acc))))))
 
+(defun parse-query ())
+
 (defun method-override ())
