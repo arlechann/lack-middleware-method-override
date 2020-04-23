@@ -23,7 +23,7 @@
 (is (lack-middleware-method-override::get-method '(("_method" . "POST") ("_method" . "DELETE"))) "POST" :test #'equalp)
 (is (lack-middleware-method-override::get-method nil) nil)
 
-(is (lack-middleware-method-override:method-override
+(is (lack-middleware-method-override::request-handler
       '(:REQUEST-METHOD :POST
         :SCRIPT-NAME ""
         :PATH-INFO "/"
@@ -54,7 +54,7 @@
       :CONTENT-TYPE NIL
       :CLACK.STREAMING T
       :CLACK.IO))
-(is (lack-middleware-method-override:method-override
+(is (lack-middleware-method-override::request-handler
       '(:REQUEST-METHOD :POST
         :SCRIPT-NAME ""
         :PATH-INFO "/"
