@@ -21,5 +21,5 @@ POST is overridden by PUT.
 
 ```
 $ qlot install
-$ qlot exec ros run -e '(asdf:load-system :prove) (prove:run :lack-middleware-method-override)' -q
+$ make test
 ```
