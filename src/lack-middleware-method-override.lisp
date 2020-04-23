@@ -1,7 +1,7 @@
 (in-package :cl-user)
 (defpackage :lack-middleware-method-override
             (:use :cl)
-            (:export method-override))
+            (:export *method-override*))
 (in-package :lack-middleware-method-override)
 
 (defun split (sep str)
@@ -33,3 +33,6 @@
                env)
         env)))
 
+(defvar *method-override*
+  (lambda (app)
+    (lambda (env) (funcall app (request-handler env)))))
