@@ -24,4 +24,11 @@
 (defun get-method (parsed)
   (cdr (assoc "_method" parsed :test #'string=)))
 
-(defun method-override ())
+(defun method-override (env)
+  (let ((current (getf env :request-method))
+        (rewrited (get-method (parse-query (getf env :query-string)))))
+    (if (and (eq current :POST)
+              rewrited)
+        (progn (setf (getf env :request-method) (intern rewrited :keyword))
+               env)
+        env)))
