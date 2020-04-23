@@ -11,6 +11,8 @@
 (is (lack-middleware-method-override::split "=" "a") '("a") :test #'equalp)
 (is (lack-middleware-method-override::split "" "a=b") '("a" "=" "b") :test #'equalp)
 (is (lack-middleware-method-override::split "cd" "abcdefabcdef") '("ab" "efab" "ef") :test #'equalp)
+(is (lack-middleware-method-override::split "=" "") nil :test #'equalp)
+
 (is (lack-middleware-method-override::parse-query "a=b") '(("a" . "b")) :test #'equalp)
 (is (lack-middleware-method-override::parse-query "a=b&c=d") '(("a" . "b") ("c" . "d")) :test #'equalp)
 (is (lack-middleware-method-override::parse-query "") nil :test #'equalp)
