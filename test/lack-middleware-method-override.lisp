@@ -5,7 +5,7 @@
                   :lack-middleware-method-override))
 (in-package :lack-middleware-method-override-test)
 
-(plan 8)
+(plan 13)
 
 (is (lack-middleware-method-override::split "=" "a=b") '("a" "b") :test #'equalp)
 (is (lack-middleware-method-override::split "=" "a") '("a") :test #'equalp)

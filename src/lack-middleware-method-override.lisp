@@ -21,6 +21,7 @@
           (mapcar (lambda (str) (split "=" str))
                   (split "&" query))))
 
-(defun get-method ())
+(defun get-method (parsed)
+  (cdr (assoc "_method" parsed :test #'string=)))
 
 (defun method-override ())
