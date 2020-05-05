@@ -13,7 +13,7 @@
   (let* ((body-parameters (lack.request:request-body-parameters (lack.request:make-request env)))
          (method (get-method body-parameters)))
     (if method
-       (setf (getf env :REQUEST-METHOD) method))
+       (setf (getf env :REQUEST-METHOD) (intern method :keyword)))
     env))
 
 (defvar *method-override*
