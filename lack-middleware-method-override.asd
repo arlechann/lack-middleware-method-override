@@ -2,6 +2,7 @@
   :version "0.0.1"
   :author "arlechann"
   :license "GPL v3"
+  :depends-on ("lack-request")
   :components ((:module "src"
                 :components ((:file "lack-middleware-method-override"))))
   :description "Override HTTP method"

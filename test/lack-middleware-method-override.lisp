@@ -5,7 +5,7 @@
                   :lack-middleware-method-override))
 (in-package :lack-middleware-method-override-test)
 
-(plan 15)
+(plan 4)
 
 (is (lack-middleware-method-override::get-method '(("a" . "b") ("c" . "d"))) nil)
 (is (lack-middleware-method-override::get-method '(("_method" . "POST") ("c" . "d"))) "POST" :test #'equalp)
